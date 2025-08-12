@@ -1,83 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cafe Para Todos</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Animación de scroll */
+        .Cafe-1 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+        }
+        .Cafe-1.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Menú responsive */
+        .navbar.active {
+            display: block;
+        }
+    </style>
 </head>
-
 <body>
 
+<header class="geader">
+    <div class="menu container">
+        <label for="Logo">
+            <img src="Imagenes/logo.png" alt="Logo" style="width: 70px;cursor:pointer;">
+        </label>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
 
-    <header class="geader">
-
-        <div class="menu container">
-            <a href="#" class="loho">Logo</a>
-            <input type="checkbox" id="menu" />
-            <label for="menu">
-                <img src="Imagenes/menu.png " class="menu-icono=" alt="">
-            </label>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
-
-            </nav>
-        </div>
-
-        <div class="header-content container">
-
-            <div class="content">
-                <h1>Cafe Para Todos</h1>
-                <p>
-                    Cafe para todos es una experiencia unica para que todos descubran un buen cafe de calidad con
-                    diferentes preparaciones de calidad, prensa francesa, v60, AeroPress, Moka italiana entre otros.
-                    Granos completamente naturales con diferentes moliedas y donde puedes ver por ti mismo el verdadero cafe 
-                    un cafe real y no negro. Asi que ven y disfruta  EL MEJOR CAFE 
-                </p>
-                <a href="#" class="btn-1">Mas informacion1</a>
-                <a href="#" class="btn-1">Mas informacion2</a>
-            </div>"
-     </header>
-
-     <section class="Cafe">
-        <img class="Cafe-img" src="Imagenes/Cafe reunidos.png" alt="">
-        <div class="Cafe-content conteiner">
-            <h2>Las principales preparaciones de CAFE</h2>
-            <p class="txt-p">
-                aqui poner las diferentes preparaciones de cafe que hay. 
+    <div class="header-content container">
+        <div class="content">
+            <h1>Cafe Para Todos</h1>
+            <p>
+                Cafe para todos es una experiencia única para que todos descubran un buen café de calidad con
+                diferentes preparaciones: prensa francesa, v60, AeroPress, Moka italiana, entre otros.
+                Granos completamente naturales con distintas moliendas, para que veas el verdadero café: un café real y no solo negro.
             </p>
-
-            <div class="Cafe-group">
-                <div class="Cafe-1">
-                    <img src="Imagenes/Cafe1.jpeg" alt="">
-                    <h3>Cafe Expreso</h3>
-                    <p>
-                        bebida de café concentrada, intensa y de sabor fuerte, 
-                        creada a partir de agua caliente forzada a través de café molido finamente a alta presión, 
-                        Perfecto para momentos de sueño. 
-                    </p>
-                </div>
-            </div>
-             <div class="Cafe-1">
-                    <img src="Imagenes/Prensa fransesa.jpg" alt="">
-                    <h3>Cafe En Prensa Francesa</h3>
-                    <p>
-                        bebida que se obtiene mediante la inmersión del café molido en agua caliente, 
-                        seguido de un proceso de filtrado con un émbolo.Este método permite extraer los aceites y 
-                        sabores del café de forma manual, resultando en una taza con un cuerpo intenso y un sabor pronunciado. 
-                    </p>
-                </div>
+            <a href="#" class="btn-1">Más información 1</a>
+            <a href="#" class="btn-1">Más información 2</a>
         </div>
+    </div>
+</header>
 
-     </section>
+<section class="Cafe">
+    <img class="Cafe-img" src="Imagenes/Cafe reunidos.png" alt="Image1" style="width: 500px;cursor:pointer;"> 
+    <div class="Cafe-content container">
+        <h2>Las principales preparaciones de CAFE</h2>
+        <p class="txt-p">
+            Aquí ponemos las diferentes preparaciones de café que hay.
+        </p>
 
+        <div class="Cafe-group">
+            <div class="Cafe-1">
+                <img src="Imagenes/Cafe1.jpeg" alt="">
+                <h3>Cafe Expreso</h3>
+                <p>
+                    Bebida concentrada e intensa, creada a partir de agua caliente forzada a través de café molido finamente a alta presión.
+                    Perfecto para momentos de sueño.
+                </p>
+            </div>
+            <div class="Cafe-1">
+                <img src="Imagenes/Prensa fransesa.jpg" alt="">
+                <h3>Cafe en Prensa Francesa</h3>
+                <p>
+                    Bebida que se obtiene mediante la inmersión del café molido en agua caliente, seguida de filtrado con un émbolo.
+                    Permite extraer los aceites y sabores del café manualmente, resultando en una taza intensa y sabrosa.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+const navbar = document.querySelector(".navbar");
+
+const fadeElements = document.querySelectorAll(".Cafe-1");
+
+function checkFade() {
+    const triggerBottom = window.innerHeight * 0.8;
+    fadeElements.forEach(el => {
+        const boxTop = el.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+            el.classList.add("show");
+        } else {
+            el.classList.remove("show");
+        }
+    });
+}
+
+window.addEventListener("scroll", checkFade);
+checkFade();
+</script>
 
 </body>
-
 </html>

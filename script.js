@@ -1,18 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const text = "Cafe Para Todos";
-    const title = document.querySelector("h1");
-    let i = 0;
+const menuCheckbox = document.getElementById("menu");
+const navbar = document.querySelector(".navbar");
 
-    function type() {
-        if (i < text.length) {
-            title.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, 100);
-        }
-    }
-
-    title.textContent = "";
-    type ()
+menuCheckbox.addEventListener("change", () => {
+    navbar.classList.toggle("active", menuCheckbox.checked);
 });
 
 const fadeElements = document.querySelectorAll(".Cafe-1");
