@@ -1,127 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafe Para Todos</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .Cafe-1 {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.6s ease-out;
-        }
-        .Cafe-1.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .navbar.active {
-            display: block;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cafe Para Todos</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    body{
+        background-color: #f9f4e0;
+        font-family: sans-serif;
+        margin: 0;
+    }
+    header {
+        background-color: #b57b5c;
+        padding: 20px;
+    }
+    h2{
+        text-align: center;
+        font-size: 5rem;
+        font-style:italic;
+        color: #c2ad86;
+    }
+    .catalogo{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+    .item{
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        border: 1px solid #d8cba9;
+        cursor: pointer;
+    }
+    .item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    .descripcion{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px;
+        font-size: 14px;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+    .item:hover .descripcion {
+        opacity: 1;
+    }
+</style>
 </head>
 <body>
-
-<header class="geader">
-    <div class="menu container">
-        <label for="Logo">
-            <img src="Imagenes/logo.png" alt="Logo" style="width: 70px;cursor:pointer;">
-        </label>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <div class="header-content container">
-        <div class="content">
-            <h1>Cafe Para Todos</h1>
-            <p>
-                Cafe para todos es una experiencia única para que todos descubran un buen café de calidad con
-                diferentes preparaciones: prensa francesa, v60, AeroPress, Moka italiana, entre otros.
-                Granos completamente naturales con distintas moliendas, para que veas el verdadero café: un café real y no solo negro.
-            </p>
-            <a href="#" class="btn-1">Más información 1</a>
-            <a href="#" class="btn-1">Más información 2</a>
-        </div>
-    </div>
+<header>
+<label for="Logo">
+    <img src="Imagenes/logo.png" alt="Logo" style="width: 70px;cursor:pointer;">
+</label>
 </header>
-
-<section class="Cafe">
-    <img class="Cafe-img" src="Imagenes/Cafe reunidos.png" alt="Image1" style="width: 500px;cursor:pointer;"> 
-    <div class="Cafe-content container">
-        <h2>Las principales preparaciones de CAFE</h2>
-        <p class="txt-p">
-            Aquí ponemos las diferentes preparaciones de café que hay.
-        </p>
-            <div class="Cafe-group">
-                <div class="Cafe-1">
-                    <img src="Imagenes/Cafe1.jpeg" alt="">
-                    <h3>Cafe Expreso</h3>
-                    <p>
-                        bebida de café concentrada, intensa y de sabor fuerte, 
-                        creada a partir de agua caliente forzada a través de café molido finamente a alta presión, 
-                        Perfecto para momentos de sueño. 
-                    </p>
-                </div>
-            </div>
-             <div class="Cafe-1">
-                    <img src="Imagenes/Prensa fransesa.jpg" alt="">
-                    <h3>Cafe En Prensa Francesa</h3>
-                    <p>
-                        bebida que se obtiene mediante la inmersión del café molido en agua caliente, 
-                        seguido de un proceso de filtrado con un émbolo.Este método permite extraer los aceites y 
-                        sabores del café de forma manual, resultando en una taza con un cuerpo intenso y un sabor pronunciado. 
-                    </p>
-                </div>
-                             <div class="Cafe-1">
-                    <img src="Imagenes/V60.png.webp" alt="">
-                    <h3>Cafe En V60</h3>
-                    <p>
-                        diseño cónico en forma de "V" con un ángulo de 60 grados. Este diseño, 
-                        junto con las estrías en espiral en el interior, 
-                        permite una extracción uniforme y controlada del café, resaltando sus sabores y aromas. 
-                    </p>
-                </div>
-                                             <div class="Cafe-1">
-                    <img src="Imagenes/Moca italia .png" alt="">
-                    <h3>Moca italiana</h3>
-                    <p>
-                        Es un método para preparar café que funciona haciendo pasar agua caliente presurizada por vapor a través de café molido.
-                        Es famosa por producir un café intenso y concentrado, similar al espresso.   
-                    </p>
-                </div>
-            </div>
-            <a href="#" class="btn-1">Informacion</a>
-        </div>
-        </div>
-    </div>
-</section>
+<h2>Nuestro Catálogo</h2>
+<div class="catalogo" id="catalogo"></div>
 
 <script>
-const navbar = document.querySelector(".navbar");
+    //Aca estan las imagenes
 
-const fadeElements = document.querySelectorAll(".Cafe-1");
+    const productos = [
+        { imagen: "Imagenes/Cafe1.jpeg", descripcion: "Café Expreso - Intenso y aromático." },
+        { imagen: "Imagenes/Prensa fransesa.jpg", descripcion: "Prensa Francesa - Cuerpo y sabor completo." },
+        { imagen: "Imagenes/V60.png.webp", descripcion: "V60 - Café filtrado con aroma delicado." },
+        { imagen: "Imagenes/Moca italia .png", descripcion: "Moka Italiana - Sabor fuerte y concentrado." },
+        { imagen: "Imagenes/Cafe reunidos.png", descripcion: "Café en reunión - Perfecto para compartir." }        
+    ];
 
-function checkFade() {
-    const triggerBottom = window.innerHeight * 0.8;
-    fadeElements.forEach(el => {
-        const boxTop = el.getBoundingClientRect().top;
-        if (boxTop < triggerBottom) {
-            el.classList.add("show");
-        } else {
-            el.classList.remove("show");
-        }
+    const contenedor = document.getElementById("catalogo");
+
+    productos.forEach(producto => {
+        const tarjeta = document.createElement("div");
+        tarjeta.classList.add("item");
+
+        const img = document.createElement("img");
+        img.src = producto.imagen;
+        img.alt = producto.descripcion;
+
+        const desc = document.createElement("div");
+        desc.classList.add("descripcion");
+        desc.textContent = producto.descripcion; 
+
+        tarjeta.appendChild(img);
+        tarjeta.appendChild(desc);  
+        contenedor.appendChild(tarjeta); 
     });
-}
-
-window.addEventListener("scroll", checkFade);
-checkFade();
 </script>
-
 </body>
 </html>
