@@ -66,35 +66,6 @@
 <h2>Nuestro Catálogo</h2>
 <div class="catalogo" id="catalogo"></div>
 
-<script>
-    //Aca estan las imagenes
-
-    const productos = [
-        { imagen: "Imagenes/Cafe1.jpeg", descripcion: "Café Expreso - Intenso y aromático." },
-        { imagen: "Imagenes/Prensa fransesa.jpg", descripcion: "Prensa Francesa - Cuerpo y sabor completo." },
-        { imagen: "Imagenes/V60.png.webp", descripcion: "V60 - Café filtrado con aroma delicado." },
-        { imagen: "Imagenes/Moca italia .png", descripcion: "Moka Italiana - Sabor fuerte y concentrado." },
-        { imagen: "Imagenes/Cafe reunidos.png", descripcion: "Café en reunión - Perfecto para compartir." }        
-    ];
-
-    const contenedor = document.getElementById("catalogo");
-
-    productos.forEach(producto => {
-        const tarjeta = document.createElement("div");
-        tarjeta.classList.add("item");
-
-        const img = document.createElement("img");
-        img.src = producto.imagen;
-        img.alt = producto.descripcion;
-
-        const desc = document.createElement("div");
-        desc.classList.add("descripcion");
-        desc.textContent = producto.descripcion; 
-
-        tarjeta.appendChild(img);
-        tarjeta.appendChild(desc);  
-        contenedor.appendChild(tarjeta); 
-    });
-</script>
+<script src="catalogo.js"></script>
 </body>
 </html>
