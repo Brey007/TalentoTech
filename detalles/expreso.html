@@ -14,12 +14,60 @@
     header {
         background-color: #b57b5c;
         padding: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
-    h2{
-        text-align: center;
-        font-size: 5rem;
-        font-style:italic;
-        color: #c2ad86;
+    .container{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+    .main-content img{
+        width: 500px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 5px;
+        padding-bottom: 1cm;
+        padding-top: 1cm;
+    }
+    .descripcion {
+        margin-top: 15px;
+        font-size: 1.1rem;
+        color: black;
+        text-align: justify;
+    }
+
+    aside {
+        border-left: 1px solid #b57b5c;
+        padding-left: 15px;
+    }
+    aside h2 {
+        font-style: italic;
+        font-size: 1.5rem;
+        color: #b57b5c;
+        border-bottom: 1px solid #b57b5c;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+    }
+    .recomendado{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 0;
+        border-bottom: 1px solid #b57b5c;
+        cursor: pointer;
+        text-decoration: none;
+        color: #8b0f1c;
+    }
+    .recomendado img{
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        background-color: #8b0f1c;
+    }
+    .recomendado span{
+        font-size: 1rem;
     }
 </style>
 </head>
@@ -29,5 +77,59 @@
     <img src="../Imagenes/logo.png" alt="Logo" style="width: 70px;cursor:pointer;">
 </a>
 </header>
+
+
+<div class="container">
+    <div class="main-content">
+        <img src="../Imagenes/Cafe1.jpeg" alt="Café Expreso"
+        <p class="descripcion">
+            <strong>Café Expreso</strong><br>
+
+            La Asociación de Café de Especialidad de América (SCAA, por sus siglas en inglés) define  al espresso como una bebida concentrada de 25-35 ml preparada con 7-9 gramos de café molido fino. El agua caliente a alta presión se fuerza a través del café molido durante 20-30 segundos. Esta definición se refiere a lo que generalmente se considera como un "shot" de espresso. La SCAA también recomienda que el espresso se prepare y sirva de inmediato al cliente para obtener los mejores resultados.<br>
+
+            El resultado debe de ser una bebida espesa y rica en sabor con una crema dorada en la superficie. La crema es esencial para el sabor y textura del espresso, ya que contiene aceites y azúcares extraídos durante el proceso de preparación.<br>
+
+            La preparación del espresso es la clave
+            ¡El café espresso tiene un sabor inigualable! Su profundidad y sus fuertes notas aromáticas lo convierten en algo verdaderamente especial. El secreto de su exquisitez es su preparación, lo que hace que todos los sabores, aromas y la distintiva espuma cremosa cobren vida en cada sorbo. 
+
+            Su consistencia densa, viscosa y llena de sabor es lo que distingue a este café. ¿Sabías que su acidez equilibrada y su aroma intenso lo convierten en el café perfecto para cualquier momento del día? Además, su complejidad de sabores varía según el grano de café utilizado.
+
+            Es importante que todo barista sepa preparar el espresso perfecto, ya que es la base de todas las bebidas de café, desde el clásico cappuccino hasta el cremoso latte, las posibilidades son muy amplias. Estas bebidas combinan el espresso con leche caliente o vaporizada para crear diferentes capas de sabores y texturas.
+
+            Y para asegurarte de que tu café espresso sea de calidad, es fundamental utilizar granos frescos. ¡La molienda precisa y el control adecuado de la presión y el tiempo de extracción son claves para obtener un espresso delicioso!
+
+            ¿Cómo preparar un espresso desde cero? 
+            Para preparar un café espresso, se usa una máquina de espresso especializada que genera la presión necesaria para extraer el café de manera eficiente. Se deben seguir los siguientes pasos:
+
+            1. Molienda: Es importante moler los granos de café justo antes de preparar el espresso. La molienda debe ser fina y uniforme, similar a la textura de la sal de mesa, en un molino industrial se acostumbra ajustar el disco del número 15 al 20, para una mejor extracción.
+
+            2. Dosificación: Se coloca la cantidad adecuada de café molido en el portafiltro de la máquina de espresso. Por lo regular, un espresso lleva alrededor de 16 gr de café. 
+
+            3. Compactación: Con la ayuda de un tamper, se presiona el café molido en el portafiltro para garantizar una superficie uniforme y compacta. La compresión adecuada es esencial para una extracción óptima.
+
+            4. Extracción: Se coloca el portafiltro en la máquina de espresso y se inicia el proceso de extracción. El agua caliente se fuerza a través del café molido a alta presión durante un tiempo específico, generalmente de 25 a 30 segundos.
+
+            5. Disfrute: El café espresso se sirve en una taza pequeña y se puede disfrutar solo o como base para otras bebidas.
+        </p>
+    </div>
+
+    <aside>
+        <h2>Te Podría Interesar</h2>
+        <a href="prensa-francesa.html" class="recomendado">
+            <img src="../Imagenes/Prensa fransesa.jpg" alt="Prensa Francesa">
+            <span>Prensa Francesa</span>
+        </a>
+        <a href="v60.html" class="recomendado">
+            <img src="../Imagenes/V60.png.webp" alt="V60">
+            <span>V60</span>
+        </a>
+        <a href="moka-italiana.html" class="recomendado">
+            <img src="../Imagenes/Moca italia .png" alt="Moka Italiana">
+            <span>Moka Italiana</span>
+        </a>
+    </aside>
+</div>
+
+
 </body>
 </html>
