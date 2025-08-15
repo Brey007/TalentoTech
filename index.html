@@ -26,6 +26,9 @@
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 20px;
         padding: 20px;
+        border-top: 3px solid  #968667;
+        border-bottom: 3px solid  #968667;
+
     }
     .item{
         position: relative;
@@ -55,6 +58,20 @@
     .item:hover .descripcion {
         opacity: 1;
     }
+    .catalogo-titulo {
+        font-size: 4rem;
+        font-weight: bold;
+        text-align: center;
+        border: 3px solid #968667;
+        padding: 10px 20px;
+        display: inline-block;
+        border-radius: 10px;
+        background-color: #fffaf0;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: 12cm;
+        margin-right: 12cm;
+    }
 </style>
 </head>
 <body>
@@ -63,7 +80,7 @@
     <img src="Imagenes/logo.png" alt="Logo" style="width: 70px;cursor:pointer;">
 </label>
 </header>
-<h2>Nuestro Catálogo</h2>
+<h2 class="catalogo-titulo">Nuestro Catálogo</h2>
 <div class="catalogo" id="catalogo"></div>
 
 <script src="catalogo.js"></script>
